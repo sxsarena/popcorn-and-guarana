@@ -1,0 +1,43 @@
+@import "../../styles/config.scss";
+
+// Search Bar
+.searchBar {
+  margin-right: 80px;
+  width: 300px;
+}
+
+.searchBar-box { display: none; }
+
+.searchBar-group {
+  display: flex;
+  flex-direction: row;
+}
+
+.searchBar-input {
+  background: #fff;
+  border: none;
+  border-left: 4px solid #999;
+  border-radius: 4px 0 0 4px;
+  font-size: 1.4rem;
+  height: 40px;
+  outline: none;
+  padding: 0 10px;
+  width: 260px;
+}
+
+.searchBar-icon { fill: #3478c1; }
+
+.searchBar-submit {
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  height: 40px;
+  outline: none;
+  width: 40px;
+}
+
+@media(min-width: $screen-tablet-portrait) {
+  .searchBar-box {
+    width: 253px;
+  }
+}
