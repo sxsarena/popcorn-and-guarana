@@ -1,3 +1,35 @@
+@import "../../styles/config.scss";
+
 .header {
-  background: red;
+  background: rgba(0,0,0,.8);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 60px;
+  padding: 10px;
+}
+
+.header-nav {
+  display: flex;
+  flex-direction: row;
+  padding: 0 10px;
+}
+
+// Logotype
+.logotype {
+  height: 40px;
+  overflow: hidden;
+  transition: 0.25s;
+  width: 40px;
+}
+
+.logotype-svg {
+  height: 40px;
+  width: 253px;
+}
+
+@media(min-width: $screen-tablet-portrait) {
+  .logotype {
+    width: 253px;
+  }
 }

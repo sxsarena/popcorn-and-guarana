@@ -1,32 +1,29 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
+import MainMenu from '../main-menu';
+import SearchBar from '../search-bar';
+
 import styles from './header.module.scss';
 
-interface HeaderProps {
+interface Props {
   currentCity?: string
 }
 
-const Header: React.FC<HeaderProps> = () => {
+const Header: React.FC<Props> = (Props) => {
   return (
     <header className={styles.header}>
-      <h2>Header</h2>
-      <ul>
-        <li>
-          <NavLink activeClassName="active"  to="/">Home</NavLink>
-        </li>
-        <li>
-          <NavLink
-            to={{
-              pathname: '/filmes',
-              search: '?city=rio-de-janeiro',
-              state: { fromNavBar: true }
-            }}
-          >
-            Nome do filme
-          </NavLink>
-        </li>
-      </ul>
+      <h1 className={styles.logotype}>
+        <NavLink to="/">
+          <svg viewBox="0 0 254 40" className={styles['logotype-svg']}>
+            <use xlinkHref="#icon-logo"></use>
+          </svg>
+        </NavLink>
+      </h1>
+      <div className={styles['header-nav']}>
+        <SearchBar />
+        <MainMenu />
+      </div>
     </header>
   )
 }
