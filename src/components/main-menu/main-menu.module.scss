@@ -10,14 +10,17 @@
   flex-direction: row;
   text-decoration: none;
 }
-.mainMenu-link { line-height: 4rem; }
-.mainMenu-icon {
-  fill: #3478c1;
-  margin-right: 10px;
+
+.mainMenu-link {
+  height: 4rem;
+  line-height: 4rem;
 }
+
+.mainMenu-icon { fill: #3478c1; }
 .mainMenu-text { display: none; }
 
 @media(min-width: $screen-tablet-portrait) {
+  .mainMenu-icon { margin-right: 10px; }
   .mainMenu-text {
     color: #fff;
     display: inline-block;
