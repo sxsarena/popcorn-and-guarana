@@ -1,0 +1,26 @@
+@import "../../styles/config.scss";
+
+.mainMenu-item { margin-left: 20px; }
+.mainMenu-item:first-child { margin-left: 0; }
+
+.mainMenu-list,
+.mainMenu-link {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  text-decoration: none;
+}
+.mainMenu-link { line-height: 4rem; }
+.mainMenu-icon {
+  fill: #3478c1;
+  margin-right: 10px;
+}
+.mainMenu-text { display: none; }
+
+@media(min-width: $screen-tablet-portrait) {
+  .mainMenu-text {
+    color: #fff;
+    display: inline-block;
+    font-size: 1.3rem;
+  }
+}
