@@ -29,9 +29,9 @@ const Card: React.FC = () => {
 
   return (
     <article className={styles.card}>
-      <a className={styles['card-link']} href="">
+      <a className={styles['card-link']} href={`/filme/`}>
         <figure className={styles['card-imageWrap']}>
-          <img className={styles['card-image']} src={image.url} />
+          <img className={styles['card-image']} src={image.url} alt={card.title} />
           <ul className={styles['card-tagsList']}>
             {tags?.map(item => {
               return (

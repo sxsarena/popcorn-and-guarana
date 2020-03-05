@@ -1,0 +1,37 @@
+.tabs {}
+
+.tabs-list {
+  border-bottom: 1px solid #999;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 2.4rem;
+}
+
+.tabs-button {
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  color: #09f;
+  cursor: pointer;
+  outline: none;
+  font-size: 2rem;
+  margin-bottom: -2px;
+  padding: 1rem 2rem;
+}
+
+.tabs-button--active {
+  border-bottom: 3px solid #ff7300;
+  color: #ff7300;
+}
+
+.moviesList {
+  display: flex;
+  flex-direction: row;
+}
+
+.moviesList-item {
+  margin-left: 1rem;
+  max-width: 14.6rem;
+}
+
+.moviesList-item:first-child { margin-left: 0; }
