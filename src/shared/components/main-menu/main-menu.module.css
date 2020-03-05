@@ -1,5 +1,19 @@
+/* ==========================================================================
+Config
+========================================================================== */
 @import "../../config";
 
+:root {
+  --icon-color: #3478c1;
+  --icon-active-color: #ff7300;
+
+  --link-active-border-color: #252525;
+
+  --text-color: #fff;
+}
+
+/* Main Menu
+========================================================================== */
 .mainMenu-item { margin-left: 20px; }
 .mainMenu-item:first-child { margin-left: 0; }
 
@@ -20,14 +34,14 @@
   outline: none;
 }
 
-.mainMenu-icon { fill: #3478c1; }
+.mainMenu-icon { fill: var(--icon-color); }
 .mainMenu-text { display: none; }
 
 .mainMenu-link--active { position: relative; }
 .mainMenu-link--active:after {
   border-left: 2rem solid transparent;
   border-right: 2rem solid transparent;
-  border-bottom: 2rem solid #252525;
+  border-bottom: 2rem solid var(--link-active-border-color);
   content: "";
   display: inline-block;
   height: 0;
@@ -36,12 +50,14 @@
   width: 0;
 }
 
-.mainMenu-link--active .mainMenu-icon { fill: #ff7300; }
+.mainMenu-link--active .mainMenu-icon { fill: var(--icon-active-color); }
 
+/* Media Queries
+========================================================================== */
 @media(min-width: var(--screen-tablet-portrait)) {
   .mainMenu-icon { margin-right: 10px; }
   .mainMenu-text {
-    color: #fff;
+    color: var(--text-color);
     display: inline-block;
     font-size: 1.3rem;
   }

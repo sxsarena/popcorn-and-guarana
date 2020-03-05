@@ -1,7 +1,22 @@
+/* ==========================================================================
+Config
+========================================================================== */
+:root {
+  --title-color: #fff;
+
+  --checkbox-bg: #fff;
+  --checkbox-checked-bg: #ff7300;
+  --checkbox-checked-color: #fff;
+
+  --text-color: #fff;
+}
+
+/* Filter
+========================================================================== */
 .filterList { margin: 1rem 0; }
 
 .filterList-title {
-  color: #fff;
+  color: var(--title-color);
   font-size: 2.8rem;
   margin-bottom: 1rem;
 }
@@ -25,7 +40,7 @@
 }
 
 .filterList-checkbox {
-  background: #fff;
+  background: var(--checkbox-bg);
   border-radius: 4px;
   display: inline-block;
   height: 20px;
@@ -34,13 +49,13 @@
 }
 
 .filterList-checkbox--checked {
-  background: #ff7300;
+  background: var(--checkbox-checked-bg);
   position: relative;
 }
 
 .filterList-checkbox--checked:before,
 .filterList-checkbox--checked:after {
-  background: #fff;
+  background: var(--checkbox-checked-color);
   border-radius: 4px 4px 0 0;
   content: '';
   display: inline-block;
@@ -64,7 +79,7 @@
 }
 
 .filterList-text {
-  color: #fff;
+  color: var(--text-color);
   line-height: 2rem;
   text-transform: uppercase;
 }

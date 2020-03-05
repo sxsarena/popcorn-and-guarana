@@ -1,3 +1,15 @@
+/* ==========================================================================
+Config
+========================================================================== */
+:root {
+  --tab-color: #09f;
+
+  --tab-active-color: #ff7300;
+  --tab-active-border-color: #ff7300;
+}
+
+/* Tabs
+========================================================================== */
 .tabs-list {
   border-bottom: 1px solid #999;
   display: flex;
@@ -9,7 +21,7 @@
   background: none;
   border: none;
   border-bottom: 3px solid transparent;
-  color: #09f;
+  color: var(--tab-color);
   cursor: pointer;
   outline: none;
   font-size: 2rem;
@@ -18,10 +30,12 @@
 }
 
 .tabs-button--active {
-  border-bottom: 3px solid #ff7300;
-  color: #ff7300;
+  border-bottom: 3px solid var(--tab-active-border-color);
+  color: var(--tab-active-color);
 }
 
+/* Movies List
+========================================================================== */
 .moviesList {
   display: flex;
   flex-direction: row;
