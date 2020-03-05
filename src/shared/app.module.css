@@ -1,0 +1,33 @@
+:root {
+  --main-color: #252525;
+
+  --base-font-size: 62.5%;
+  --base-font-family: "Proxima Nova","Trebuchet MS","Proxima Nova Bold",sans-serif,Arial;
+  --base-font-size-px: 13px;
+  --base-line-height: 1.2;
+  --base-text-color: #fff;
+  --base-link-color: #09f;
+  --base-background-color: #333;
+
+  /* Breakpoints */
+  --screen-base: 1380px;
+  /* Smartphones (portrait) */
+  --screen-phone-portrait: 320px;
+  /* Smartphones (landscape) */
+  --screen-phone-landscape: 480px;
+  /* Small tablet */
+  --screen-tablet-small: 600px;
+  /* Tablet (portrait) */
+  --screen-tablet-portrait: 768px;
+  /* Tablet (landscape) / Desktop */
+  --screen-desktop: 992px;
+  /* Wide */
+  --screen-wide: 1380px;
+
+  --screen-phone-portrait-max: (var(--screen-phone-landscape) - 1);
+  --screen-phone-landscape-max: (var(--screen-tablet-small) - 1);
+  --screen-tablet-small-max: (var(--screen-tablet-portrait) - 1);
+  --screen-tablet-portrait-max: (var(--screen-desktop) - 1);
+  --screen-desktop-max: (var(--screen-wide) - 1);
+}
+
