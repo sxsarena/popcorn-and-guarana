@@ -1,0 +1,51 @@
+@import "../../styles/config.scss";
+
+.mainMenu-item { margin-left: 20px; }
+.mainMenu-item:first-child { margin-left: 0; }
+
+.mainMenu-list,
+.mainMenu-link {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  text-decoration: none;
+}
+
+.mainMenu-link {
+  background: none;
+  border: none;
+  cursor: pointer;
+  height: 4rem;
+  line-height: 4rem;
+  outline: none;
+}
+
+.mainMenu-icon { fill: #3478c1; }
+.mainMenu-text { display: none; }
+
+.mainMenu-link--active {
+  position: relative;
+
+  &:after {
+    border-left: 2rem solid transparent;
+    border-right: 2rem solid transparent;
+    border-bottom: 2rem solid #252525;
+    content: "";
+    display: inline-block;
+    height: 0;
+    position: absolute;
+    bottom: -2.4rem;
+    width: 0;
+  }
+
+  .mainMenu-icon { fill: #ff7300; }
+}
+
+@media(min-width: $screen-tablet-portrait) {
+  .mainMenu-icon { margin-right: 10px; }
+  .mainMenu-text {
+    color: #fff;
+    display: inline-block;
+    font-size: 1.3rem;
+  }
+}
