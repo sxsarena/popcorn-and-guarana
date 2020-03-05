@@ -1,5 +1,14 @@
-import { createStore, applyMiddleware, compose } from 'redux';
-import createRootReducer from './root-reducer';
+import { createStore, applyMiddleware, Store, compose } from 'redux';
+import createSagaMiddleware from 'redux-saga';
+
+import { MoviesState } from './movies/types';
+
+import rootReducer from './root-reducer';
+import rootSaga from './root-saga';
+
+export interface ApplicationState {
+  movies: MoviesState
+}
 
 type StoreParams = {
   initialState?: { [key: string]: any };
@@ -13,11 +22,15 @@ export const configureStore = ({ initialState, middleware = [] }: StoreParams) =
     window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({ actionsBlacklist: [] });
 
   const composeEnhancers = devtools || compose;
+  const sagaMiddleware = createSagaMiddleware();
+  const enhancer = composeEnhancers(
+    applyMiddleware(...[sagaMiddleware].concat(...middleware))
+  );
 
-  const store = createStore(
-    createRootReducer(),
+  const store: Store<ApplicationState> = createStore(
+    rootReducer(),
     initialState,
-    composeEnhancers(applyMiddleware(...middleware))
+    enhancer
   );
 
   if (process.env.NODE_ENV !== 'production') {
@@ -27,6 +40,8 @@ export const configureStore = ({ initialState, middleware = [] }: StoreParams) =
       );
     }
   }
+
+  sagaMiddleware.run(rootSaga);
 
   return store;
 };

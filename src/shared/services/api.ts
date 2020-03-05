@@ -1,9 +1,8 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'https://api-content.ingresso.com/'
+  baseURL: '/bff/',
+  headers: { 'Content-Type': 'application/json' }
 });
 
 export default api;
-
-// v0/templates/highlights/1/partnership/home

@@ -1,3 +1,3 @@
-import Catalog from './catalog-component';
+import Catalog from './catalog-container';
 
 export default Catalog;

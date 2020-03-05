@@ -9,6 +9,7 @@ import paths from '../../config/paths';
 import errorHandler from './middleware/error-handler';
 import serverRenderer from './middleware/server-renderer';
 import addStore from './middleware/add-store';
+import moviesController from './controllers/movies';
 
 require('dotenv').config();
 
@@ -25,6 +26,8 @@ app.use(cors());
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use('/bff/movies', moviesController);
 
 app.use(addStore);
 
