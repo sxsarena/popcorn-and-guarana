@@ -1,0 +1,90 @@
+.changeCity {
+  background-color: #252525;
+  display: block;
+  height: calc(100vh - 60px);
+  min-width: 36rem;
+  overflow: hidden;
+  overflow-y: auto;
+  padding: 2.5rem;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 74px;
+  width: 100%;
+  z-index: 2;
+}
+
+.changeCity-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 2.5rem;
+}
+
+.changeCity-group { margin-bottom: 1.6rem; }
+
+.changeCity-selectWrap {
+  display: block;
+  position: relative;
+}
+
+.changeCity-selectWrap:before,
+.changeCity-selectWrap:after {
+  background: #09f;
+  content: '';
+  display: inline-block;
+  height: 8px;
+  margin-top: -5px;
+  position: absolute;
+  top: 50%;
+  width: 2px;
+}
+
+.changeCity-selectWrap:before {
+  right: 16px;
+  transform: rotate(-45deg);
+}
+@import "../../config";
+
+.changeCity-selectWrap:after {
+  right: 11px;
+  transform: rotate(45deg);
+}
+
+.changeCity-select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: #fff;
+  border: none;
+  border-left: 4px solid #999;
+  border-radius: 4px;
+  font-size: 1.4rem;
+  height: 50px;
+  outline: none;
+  padding: 0 10px;
+  padding-right: 3rem;
+  width: 100%;
+}
+
+.changeCity-button {
+  background-color: #09f;
+  border-color: #09f;
+  border-radius: 4px;
+  color: #252525;
+  cursor: pointer;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 2rem;
+  padding: 1rem 1.6rem;
+  text-transform: uppercase;
+}
+
+@media(min-width: var(--screen-tablet-portrait)) {
+  .changeCity {
+    height: auto;
+    left: inherit;
+    min-width: 41rem;
+    right: 1rem;
+    width: auto;
+  }
+}
