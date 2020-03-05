@@ -1,6 +1,10 @@
 import { combineReducers } from 'redux';
 
+import movies from './movies';
+
 const createRootReducer = () =>
-  combineReducers({});
+  combineReducers({
+    movies,
+  });
 
 export default createRootReducer;
