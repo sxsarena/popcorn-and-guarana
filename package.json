@@ -1,6 +1,6 @@
 {
   "name": "popcorn-and-guarana",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "4.2.4",
@@ -33,6 +33,7 @@
     "build:with-stats": "cross-env NODE_ENV=production TS_NODE_PROJECT=tsconfig.tooling.json webpack --config config/webpack.config.ts/client.prod.ts --json > build/client/static/bundle-stats.json",
     "clean:transpiled": "rimraf build/transpiled",
     "lint:js": "eslint --ext .js,.jsx,.ts,.tsx src/",
+    "release": "release-it --no-npm.publish --git.tagName='v${version}' --github.release",
     "start": "cross-env NODE_ENV=development TS_NODE_PROJECT=tsconfig.tooling.json ts-node scripts/start",
     "start:analyzer": "webpack-bundle-analyzer build/client/static/bundle-stats.json",
     "test": "cross-env TS_NODE_PROJECT=tsconfig.tooling.json ts-node scripts/test --env=jsdom",
@@ -133,6 +134,7 @@
     "react-dev-utils": "10.2.0",
     "redux-mock-store": "1.5.4",
     "regenerator-runtime": "0.13.3",
+    "release-it": "12.6.3",
     "sass-loader": "8.0.2",
     "sass-resources-loader": "2.0.1",
     "stats-webpack-plugin": "0.7.0",
