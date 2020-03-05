@@ -1,4 +1,12 @@
-.filterList {
+.filterList { margin: 1rem 0; }
+
+.filterList-title {
+  color: #fff;
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+}
+
+.filterList-list {
   margin-bottom: -1rem;
   overflow: hidden;
 }

@@ -26,9 +26,9 @@ const Filter: React.FC<Props> = ({ types }: Props) => {
   };
 
   return (
-    <div>
-      <h2>Filmes</h2>
-      <ul className={styles.filterList}>
+    <div className={styles.filterList}>
+      <h2 className={styles['filterList-title']}>Filmes</h2>
+      <ul className={styles['filterList-list']}>
         {list?.map(item => {
           return (
             <li className={styles['filterList-item']} key={item.id}>
