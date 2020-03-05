@@ -9,17 +9,17 @@ interface OwnProps {
 }
 
 const Card: React.FC<OwnProps> = ({ movie }: OwnProps) => {
-  // const image?: string = movie?.images.filter(item => item.type === 'PosterPortrait')[0];
-
-  console.log(movie?.images);
+  const addDefaultSrc = (evt: React.ChangeEvent<HTMLImageElement>) => {
+    evt.target.src = 'https://ingresso-a.akamaihd.net/catalog/Content/img/placeholder-movie-image-4359a6ad34.jpg';
+  }
 
   return (
     <article className={styles.card}>
       <a className={styles['card-link']} href={`/filme/`}>
         <figure className={styles['card-imageWrap']}>
-          <img className={styles['card-image']} src={'#'} alt={movie?.title} />
+          <img className={styles['card-image']} src={movie?.thumb} alt={movie?.title} onError={addDefaultSrc} />
           <ul className={styles['card-tagsList']}>
-            {movie?.genres.map(item => {
+            {movie?.genres?.map(item => {
               return (
                 <li className={styles['card-tagsList-item']}>
                   <span className={styles['card-tagsList-tag']}>{item}</span>

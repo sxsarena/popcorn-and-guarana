@@ -10,7 +10,7 @@ const INITIAL_STATE: MoviesState = {
 const reducer: Reducer<MoviesState> = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case MoviesTypes.LOAD_REQUEST:
-      return { ...state, loading: true };
+      return { ...state, loading: true, cityId: action.payload.cityId };
     case MoviesTypes.LOAD_SUCCCES:
       return {
       ...state, loading: false, error: false, data: action.payload.data,

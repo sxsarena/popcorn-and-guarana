@@ -10,14 +10,14 @@ import styles from './catalog.module.css';
 
 interface Props {
   movies: IMovie[],
-  loadRequest(): void
+  loadRequest(cityId: string): void
 }
 
 class Catalog extends Component<Props> {
   componentDidMount() {
     const { loadRequest } = this.props;
 
-    loadRequest();
+    loadRequest('1');
   }
 
   render() {
@@ -37,8 +37,8 @@ class Catalog extends Component<Props> {
           </ul>
 
           <ul className={styles.moviesList}>
-            {movies.map(movie => (
-              <li className={styles['moviesList-item']}><Card /></li>
+            {movies?.map(movie => (
+              <li className={styles['moviesList-item']} key={movie.id}><Card movie={movie} /></li>
             ))}
           </ul>
         </div>

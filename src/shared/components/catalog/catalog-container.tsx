@@ -8,20 +8,21 @@ import * as MoviesActions from '../../store/movies/actions';
 
 import CatalogComponent from './catalog-component';
 
-interface StateProps {
+interface StateFromProps {
   movies: IMovie[]
 }
 
-interface DispatchProps {
+interface DispatchFromProps {
   loadRequest(): void
 }
 
-type Props = StateProps & DispatchProps;
-
-const mapStateToProps = (state: ApplicationState) => ({
-  movies: state.movies.data,
+const mapStateToProps = ({ movies }: ApplicationState) => ({
+  movies: movies.data,
 });
 
 const mapDispatchToProps = (dispatch: Dispatch) => bindActionCreators(MoviesActions, dispatch);
 
-export default connect(mapStateToProps, mapDispatchToProps)(CatalogComponent);
+export default connect<StateFromProps, DispatchFromProps, void>(
+  mapStateToProps,
+  mapDispatchToProps
+)(CatalogComponent);
