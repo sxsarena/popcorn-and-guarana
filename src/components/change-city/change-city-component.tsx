@@ -15,8 +15,8 @@ const ChangeCity: React.FC<Props> = (Props) => {
           <span className={styles['changeCity-selectWrap']}>
             <select className={styles['changeCity-select']}>
               <option>Estado</option>
-              <option>Rio Janeiro</option>
-              <option>São Paulo</option>
+              <option value="2">Rio Janeiro</option>
+              <option value="1">São Paulo</option>
             </select>
           </span>
         </p>
