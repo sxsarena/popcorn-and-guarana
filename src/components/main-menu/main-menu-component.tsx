@@ -1,4 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
+import classnames from 'classnames';
+
+import ChangeCity from '../change-city';
 
 import styles from './main-menu.module.scss';
 
@@ -7,24 +10,33 @@ interface Props {
 }
 
 const MainMenu: React.FC<Props> = (Props) => {
+  const [showChooseACity, setShowChooseACity] = useState(false);
+
+  const handleShowChooseACity = () => {
+    setShowChooseACity(!showChooseACity);
+  }
+
   return (
     <nav className={styles.mainMenu}>
       <ul className={styles['mainMenu-list']}>
         <li className={styles['mainMenu-item']}>
-          <a href="#" className={styles['mainMenu-link']}>
+          <button className={classnames(styles['mainMenu-link'], {
+            [styles['mainMenu-link--active']]: showChooseACity
+          })} onClick={handleShowChooseACity}>
             <svg className={styles['mainMenu-icon']} width="24" height="24">
               <use xlinkHref="#icon-city"></use>
             </svg>
             <span className={styles['mainMenu-text']}>São Paulo</span>
-          </a>
+          </button>
+          {showChooseACity && <ChangeCity />}
         </li>
         <li className={styles['mainMenu-item']}>
-          <a href="#" className={styles['mainMenu-link']}>
+          <button className={styles['mainMenu-link']}>
             <svg className={styles['mainMenu-icon']} width="24" height="24">
               <use xlinkHref="#icon-profile"></use>
             </svg>
             <span className={styles['mainMenu-text']}>Olá, Visitante</span>
-          </a>
+          </button>
         </li>
         <li className={styles['mainMenu-item']}>
           <a className={styles['mainMenu-link']} href="https://atendimento.ingresso.com/hc/pt-br" target="_blank" rel="noopener noreferrer">
@@ -39,4 +51,4 @@ const MainMenu: React.FC<Props> = (Props) => {
   )
 }
 
-export default MainMenu
+export default MainMenu;

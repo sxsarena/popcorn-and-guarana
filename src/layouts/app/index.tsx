@@ -1,22 +1,22 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import Header from '../../components/header';
 import SVG from '../../components/svg';
 
 import styles from './app.module.scss';
 
-class AppLayout extends Component {
-  render() {
-    return (
-      <div>
-        <SVG />
-        <Header />
-        <div className={styles.main}>
-          {this.props.children}
-        </div>
-      </div>
-    );
-  }
+interface Props {
+  children: React.ReactNode
 }
+
+const AppLayout: React.FC<Props> = ({ children }: Props) => (
+  <div>
+    <SVG />
+    <Header />
+    <div className={styles.main}>
+      {children}
+    </div>
+  </div>
+);
 
 export default AppLayout;

@@ -20,7 +20,7 @@ const SearchBar: React.FC = () => {
         </svg>
       </button>
       <form className={classnames(styles.searchBar, {
-        [styles['searchBar--modal']]: showMobile
+        [styles['searchBar--dialog']]: showMobile
       })}>
         <fieldset className={styles['searchBar-box']}>
           <legend>Formulário de busca</legend>
