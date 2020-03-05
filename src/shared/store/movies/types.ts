@@ -24,7 +24,8 @@ export interface IMovie {
   siteURL: string,
   images: IThumb[],
   genres: string[],
-  trailers: ITrailer[]
+  trailers: ITrailer[],
+  thumb: string
 }
 
 /* State type */

@@ -27,7 +27,7 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use('/bff/movies', moviesController);
+app.use('/bff/movies/:id', moviesController);
 
 app.use(addStore);
 
