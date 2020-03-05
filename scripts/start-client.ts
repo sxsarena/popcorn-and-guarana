@@ -11,7 +11,7 @@ const webpackConfig = getConfig(process.env.NODE_ENV || 'development');
 
 const app = express();
 
-const PORT = process.env.PORT || 8500;
+const PORT = process.env.PORT || 3000;
 
 const DEVSERVER_HOST = process.env.DEVSERVER_HOST || 'http://localhost';
 
@@ -61,7 +61,7 @@ const start = async () => {
         `[${new Date().toISOString()}]`,
         chalk.blue(
           `App is running: ${process.env.HOST || 'http://localhost'}:${process.env.PORT ||
-              8500}`
+              3000}`
         )
       );
     });

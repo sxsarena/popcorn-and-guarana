@@ -43,6 +43,7 @@
   right: 16px;
   transform: rotate(-45deg);
 }
+@import "../../config";
 
 .changeCity-selectWrap:after {
   right: 11px;

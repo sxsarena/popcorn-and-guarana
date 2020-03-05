@@ -1,4 +1,6 @@
- /* Search Bar */
+@import "../../config";
+
+/* Search Bar */
 .searchBar { display: none; }
 
 .searchBar-group {

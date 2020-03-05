@@ -1,33 +1,49 @@
-:root {
-  --main-color: #252525;
+@import "./box-sizing.css";
+@import "./reset.css";
 
-  --base-font-size: 62.5%;
-  --base-font-family: "Proxima Nova","Trebuchet MS","Proxima Nova Bold",sans-serif,Arial;
-  --base-font-size-px: 13px;
-  --base-line-height: 1.2;
-  --base-text-color: #fff;
-  --base-link-color: #09f;
-  --base-background-color: #333;
+@import "./config.css";
 
-  /* Breakpoints */
-  --screen-base: 1380px;
-  /* Smartphones (portrait) */
-  --screen-phone-portrait: 320px;
-  /* Smartphones (landscape) */
-  --screen-phone-landscape: 480px;
-  /* Small tablet */
-  --screen-tablet-small: 600px;
-  /* Tablet (portrait) */
-  --screen-tablet-portrait: 768px;
-  /* Tablet (landscape) / Desktop */
-  --screen-desktop: 992px;
-  /* Wide */
-  --screen-wide: 1380px;
-
-  --screen-phone-portrait-max: (var(--screen-phone-landscape) - 1);
-  --screen-phone-landscape-max: (var(--screen-tablet-small) - 1);
-  --screen-tablet-small-max: (var(--screen-tablet-portrait) - 1);
-  --screen-tablet-portrait-max: (var(--screen-desktop) - 1);
-  --screen-desktop-max: (var(--screen-wide) - 1);
+html {
+  color: var(--base-text-color);
+  font-size: var(--base-font-size);
+  line-height: var(--base-line-height);
+  min-height: 100%;
 }
 
+body {
+  background: var(--base-background-color);
+  font-family: var(--base-font-family);
+  font-size: var(--base-font-size-px);
+}
+
+img {
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+legend { display: none; }
+
+fieldset { border: 0; }
+
+[disabled] { cursor: not-allowed; }
+
+svg { transform: translate(0, 0); }
+
+strong { font-weight: bold; }
+
+i { font-style: italic; }
+
+p { margin: 0 0 10px; }
+
+ol,
+ul {
+  margin-bottom: 10px;
+  margin-top: 0;
+}
+
+a {
+  color: var(--base-link-color);
+  cursor: pointer;
+}
+
+a:hover { text-decoration: none; }

@@ -40,8 +40,8 @@ app.use(serverRenderer());
 
 app.use(errorHandler);
 
-app.listen(process.env.PORT || 8500, () => {
-  console.log(`[${new Date().toISOString()}]`, `App is running: http://localhost:${process.env.PORT || 8500}`);
+app.listen(process.env.PORT || 3000, () => {
+  console.log(`[${new Date().toISOString()}]`, `App is running: http://localhost:${process.env.PORT || 3000}`);
 });
 
 export default app;

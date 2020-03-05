@@ -37,7 +37,7 @@ export default (): { stringified: any; raw: any } => {
   // define env vars you want to use in your client app here.
   // CAREFUL: don't use any secrets like api keys or database passwords as they are exposed publicly!
   const raw = {
-    PORT: process.env.PORT || 8500,
+    PORT: process.env.PORT || 3000,
     NODE_ENV: process.env.NODE_ENV || 'development',
     HOST: process.env.HOST || 'http://localhost',
   };

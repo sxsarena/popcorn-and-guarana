@@ -37,6 +37,7 @@ export const client = [
     __SERVER__: 'false',
     __BROWSER__: 'true',
   }),
+  new webpack.IgnorePlugin(/^\.\/moment$/),
   new ManifestPlugin({ fileName: 'manifest.json' }),
   isProfilerEnabled() && new webpack.debug.ProfilingPlugin(),
 ].filter(Boolean);
