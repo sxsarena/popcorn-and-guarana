@@ -1,6 +1,25 @@
+/* ==========================================================================
+Config
+========================================================================== */
 @import "../../config";
 
-/* Search Bar */
+:root {
+  --title-color: #fff;
+
+  --input-bg: #fff;
+  --input-border-color: #999;
+
+  --icon-color: #3478c1;
+  --icon-active-color: #ff7300;
+
+  --button-active-border-color: #252525;
+
+  --dialog-bg: #252525;
+}
+
+
+/* Search Bar
+========================================================================== */
 .searchBar { display: none; }
 
 .searchBar-group {
@@ -9,16 +28,16 @@
 }
 
 .searchBar-title {
-  color: #fff;
+  color: var(--title-color);
   font-size: 1.8rem;
   font-weight: 700;
   margin-bottom: 2.5rem;
 }
 
 .searchBar-input {
-  background: #fff;
+  background: var(--input-bg);
   border: none;
-  border-left: 4px solid #999;
+  border-left: 4px solid var(--input-border-color);
   border-radius: 4px 0 0 4px;
   font-size: 1.4rem;
   height: 40px;
@@ -27,7 +46,7 @@
   width: 260px;
 }
 
-.searchBar-icon { fill: #3478c1; }
+.searchBar-icon { fill: var(--icon-color); }
 
 .searchBar-button {
   border: none;
@@ -57,7 +76,7 @@
 .searchBar-button--active:after {
   border-left: 2rem solid transparent;
   border-right: 2rem solid transparent;
-  border-bottom: 2rem solid #252525;
+  border-bottom: 2rem solid var(--button-active-border-color);
   content: "";
   display: inline-block;
   height: 0;
@@ -66,10 +85,10 @@
   width: 0;
 }
 
-.searchBar-button--active .searchBar-icon { fill: #ff7300; }
+.searchBar-button--active .searchBar-icon { fill: var(--icon-active-color); }
 
 .searchBar--dialog {
-  background-color: #252525;
+  background-color: var(--dialog-bg);
   display: block;
   height: calc(100vh - 60px);
   overflow: hidden;
@@ -83,6 +102,8 @@
   z-index: 2;
 }
 
+/* Media Queries
+========================================================================== */
 @media(min-width: var(--screen-tablet-portrait)) {
   .searchBar {
     display: block;

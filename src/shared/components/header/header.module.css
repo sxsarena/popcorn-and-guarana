@@ -1,7 +1,16 @@
+/* ==========================================================================
+Config
+========================================================================== */
 @import "../../config";
 
+:root {
+  --header-bg: rgba(0,0,0,.8);
+}
+
+/* Header
+========================================================================== */
 .header {
-  background: rgba(0,0,0,.8);
+  background: var(--header-bg);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -14,7 +23,8 @@
   flex-direction: row;
 }
 
-/*  Logotype */
+/* Logotype
+========================================================================== */
 .logotype {
   height: 40px;
   overflow: hidden;
@@ -27,6 +37,8 @@
   width: 253px;
 }
 
+/* Media Queries
+========================================================================== */
 @media(min-width: var(--screen-tablet-portrait)) {
   .header-nav { padding: 0 10px; }
   .logotype {

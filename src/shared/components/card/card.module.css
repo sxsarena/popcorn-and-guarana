@@ -1,3 +1,15 @@
+/* ==========================================================================
+Config
+========================================================================== */
+:root {
+  --title-color: #fff;
+
+  --tag-bg: #f90;
+  --tag-color: #333;
+}
+
+/* Card
+========================================================================== */
 .card-link {
   display: block;
   text-decoration: none;
@@ -10,7 +22,7 @@
 }
 
 .card-title {
-  color: #fff;
+  color: var(--title-color);
   font-size: 1.6rem;
   min-height: 3.2rem;
 }
@@ -29,8 +41,8 @@
 .card-tagsList-item { margin-bottom: 0.8rem; }
 
 .card-tagsList-tag {
-  background-color: #f90;
-  color: #333;
+  background-color: var(--tag-bg);
+  color:var(--tag-color);
   display: inline-block;
   font-size: 1.2rem;
   font-weight: 700;
