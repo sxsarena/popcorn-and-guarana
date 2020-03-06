@@ -35,6 +35,16 @@ class Catalog extends Component<IProps, IState> {
     loadRequest(currentCityID);
   }
 
+  componentDidUpdate(prevProps: IProps) {
+    if (prevProps.movies !== this.props.movies) {
+      this.setState({ movies: this.props.movies });
+    }
+
+    if (prevProps.movies !== this.props.movies) {
+      this.setState({ filteredMovies: this.props.movies });
+    }
+  }
+
   handleFilters = (filter: string) => {
     const { selectedFilters, movies } = this.state;
     let newFilter: string[] = [];
