@@ -8,6 +8,9 @@ Config
 
   --tag-bg: #f90;
   --tag-color: #333;
+
+  --close-color: #fff;
+  --close-bg: #333;
 }
 
 /* Card
@@ -58,11 +61,72 @@ Config
   transform: skew(-10deg);
 }
 
+/* Trailer
+========================================================================== */
+.card-trailer {
+  background: rgba(0,0,0,0.8);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  bottom: 0;
+}
+
+.card-trailer-container {
+  position: absolute;
+  top: 10%;
+  left: 0;
+  width: 100%;
+}
+
+.card-trailer-videoWrap {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+}
+
+.card-trailer-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.card-trailer-link {
+  cursor: pointer;
+  text-decoration: none;
+  position: absolute;
+  left: 10px;
+  top: -20px;
+}
+
+.card-trailer-close {
+  background-color: var(--close-bg);
+  border: none;
+  color: var(--close-color);
+  cursor: pointer;
+  outline: none;
+  position: absolute;
+  right: 10px;
+  top: -20px;
+}
+
 /* Media Queries
 ========================================================================== */
 @custom-media --tablet-viewport (min-width: var(--screen-tablet-portrait));
 
 @media(--tablet-viewport) {
+  .card-trailer-container {
+    margin-left: -250px;
+    margin-top: -140px;
+    top: 50%;
+    left: 50%;
+    width: 500px;
+  }
+
   .card-title {
     position: inherit;
     padding: 0;

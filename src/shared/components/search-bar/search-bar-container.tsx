@@ -9,11 +9,9 @@ interface DispatchFromProps {
   searchMovie(term: string): void
 }
 
-const mapStateToProps = () => {};
-
 const mapDispatchToProps = (dispatch: Dispatch) => bindActionCreators(MoviesActions, dispatch);
 
 export default connect<void, DispatchFromProps, void>(
-  mapStateToProps,
+  null,
   mapDispatchToProps
 )(SearchComponent);
