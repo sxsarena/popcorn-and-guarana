@@ -2,7 +2,10 @@ import { Reducer } from 'redux';
 import { MoviesState, MoviesTypes } from './types';
 
 const INITIAL_STATE: MoviesState = {
-  data: {},
+  data: {
+    movies: [],
+    filters: []
+  },
   error: false,
   loading: false,
 };
@@ -10,14 +13,14 @@ const INITIAL_STATE: MoviesState = {
 const reducer: Reducer<MoviesState> = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case MoviesTypes.LOAD_REQUEST:
-      return { ...state, loading: true, cityId: action.payload.cityId };
+      return { ...state, loading: true };
     case MoviesTypes.LOAD_SUCCCES:
       return {
       ...state, loading: false, error: false, data: action.payload.data,
       };
     case MoviesTypes.LOAD_FAILURE:
       return {
-      ...state, loading: false, error: true, data: [],
+      ...state, loading: false, error: true, data: {},
       };
     default:
       return state;

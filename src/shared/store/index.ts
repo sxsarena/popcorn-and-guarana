@@ -1,12 +1,14 @@
 import { createStore, applyMiddleware, Store, compose } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 
+import { CitiesState } from './cities/types';
 import { MoviesState } from './movies/types';
 
 import rootReducer from './root-reducer';
 import rootSaga from './root-saga';
 
 export interface ApplicationState {
+  cities: CitiesState,
   movies: MoviesState
 }
 
