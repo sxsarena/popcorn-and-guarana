@@ -20,7 +20,7 @@ const DEVSERVER_HOST = process.env.DEVSERVER_HOST || 'http://localhost';
 const start = async () => {
   const [clientConfig, serverConfig] = webpackConfig;
   clientConfig.entry.bundle = [
-    `webpack-hot-middleware/client?path=${DEVSERVER_HOST}:${WEBPACK_PORT}/__webpack_hmr`,
+    `webpack-hot-middleware/client?path=${DEVSERVER_HOST}/__webpack_hmr`,
     ...clientConfig.entry.bundle,
   ];
 
@@ -29,11 +29,11 @@ const start = async () => {
 
   const publicPath = clientConfig.output.publicPath;
 
-  clientConfig.output.publicPath = [`${DEVSERVER_HOST}:${WEBPACK_PORT}`, publicPath]
+  clientConfig.output.publicPath = [`${DEVSERVER_HOST}`, publicPath]
     .join('/')
     .replace(/([^:+])\/+/g, '$1/');
 
-  serverConfig.output.publicPath = [`${DEVSERVER_HOST}:${WEBPACK_PORT}`, publicPath]
+  serverConfig.output.publicPath = [`${DEVSERVER_HOST}`, publicPath]
     .join('/')
     .replace(/([^:+])\/+/g, '$1/');
 
