@@ -7,7 +7,8 @@ interface IProps {
   filters?: {
     name: string
     checked?: boolean
-  }[]
+  }[],
+  onChange(filter: string): void
 }
 
 interface IState {
@@ -33,14 +34,17 @@ class Filter extends Component<IProps, IState> {
   }
 
   handleChange = (name: string) => {
-    return () => this.setState({
-      list: this.state.list?.map(item => {
-        if (item.name === name) {
-          item.checked = !item.checked;
-        }
-        return item;
-      })
-    });
+    return () => {
+      this.setState({
+        list: this.state.list?.map(item => {
+          if (item.name === name) {
+            item.checked = !item.checked;
+          }
+          return item;
+        })
+      });
+      this.props.onChange(name);
+    }
   };
 
   render() {
@@ -52,9 +56,9 @@ class Filter extends Component<IProps, IState> {
         <ul className={styles['filterList-list']}>
           {list?.map(item => {
             return (
-              <li className={styles['filterList-item']} key={item.name}>
+              <li className={styles['filterList-item']} key={item?.name}>
                 <label className={styles['filterList-label']}>
-                  <input type="checkbox" className={styles['filterList-input']} onChange={this.handleChange(item.name)} />
+                  <input type="checkbox" className={styles['filterList-input']} onChange={this.handleChange(item?.name)} />
                   <span className={classnames(styles['filterList-checkbox'], {
                     [styles['filterList-checkbox--checked']]: item.checked
                   })}></span>

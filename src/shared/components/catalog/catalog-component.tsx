@@ -15,20 +15,60 @@ interface IProps {
   loadRequest(cityId: string): void
 }
 
-class Catalog extends Component<IProps> {
+interface IState {
+  movies: IMovie[],
+  filteredMovies: IMovie[],
+  selectedFilters: string[]
+}
+
+class Catalog extends Component<IProps, IState> {
   constructor(props: IProps) {
     super(props);
     const { loadRequest, currentCityID } = props;
 
+    this.state = {
+      movies: props.movies,
+      filteredMovies: props.movies,
+      selectedFilters: []
+    }
+
     loadRequest(currentCityID);
   }
 
+  handleFilters = (filter: string) => {
+    const { selectedFilters, movies } = this.state;
+    let newFilter: string[] = [];
+
+    if (selectedFilters.includes(filter)) {
+      newFilter = [...selectedFilters.filter(item => item !== filter)];
+    } else {
+      newFilter = [...selectedFilters, filter];
+    }
+
+    this.setState({
+      selectedFilters: newFilter,
+      filteredMovies: newFilter.length === 0 ? movies : movies?.filter(item => this.checkCommonElement(newFilter, item.filters))
+    })
+  }
+
+  checkCommonElement = (selectedFilters: string[], movieFilters: string[]) => {
+    for(let i = 0; i < selectedFilters.length; i++) {
+      for(let j = 0; j < movieFilters.length; j++) {
+        if(selectedFilters[i] === movieFilters[j]) {
+          return true;
+        }
+      }
+    }
+    return false;
+  }
+
   render() {
-    const { movies, filters } = this.props;
+    const { filters } = this.props;
+    const { filteredMovies } = this.state;
 
     return (
       <div>
-        <Filter filters={filters} />
+        <Filter filters={filters} onChange={this.handleFilters} />
         <div className={styles.tabs}>
           <ul className={styles['tabs-list']}>
             <li className={styles['tabs-item']}>
@@ -40,7 +80,7 @@ class Catalog extends Component<IProps> {
           </ul>
 
           <ul className={styles.moviesList}>
-            {movies?.map(movie => (
+            {filteredMovies?.map(movie => (
               <li className={styles['moviesList-item']} key={movie.title}><Card movie={movie} /></li>
             ))}
           </ul>
