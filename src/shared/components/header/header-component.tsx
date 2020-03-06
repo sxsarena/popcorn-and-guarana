@@ -10,7 +10,7 @@ interface Props {
   currentCity?: string
 }
 
-const Header: React.FC<Props> = (Props) => {
+const Header: React.FC<Props> = ({ currentCity }: Props) => {
   return (
     <header className={styles.header}>
       <h1 className={styles.logotype}>
@@ -22,7 +22,7 @@ const Header: React.FC<Props> = (Props) => {
       </h1>
       <div className={styles['header-nav']}>
         <SearchBar />
-        <MainMenu />
+        <MainMenu currentCity={currentCity} />
       </div>
     </header>
   )
