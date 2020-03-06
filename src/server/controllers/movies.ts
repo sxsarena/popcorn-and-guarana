@@ -24,7 +24,7 @@ const movies = (req: Request, res: Response) => {
         url: string
       }[],
       thumb: string,
-      filters: string
+      filters: string[]
     },
     showtimes: {
       rooms: {
@@ -43,13 +43,19 @@ const movies = (req: Request, res: Response) => {
 
       const movies = body?.map((item: Data) => {
         const thumb = item.event.images?.filter(image => image.type === 'PosterPortrait' )[0];
+        const movieFilters: string[] = [];
 
         item.event.thumb = thumb.url;
 
-        item.event.filters = item.showtimes.map(showtime => showtime.rooms.map(room => room.sessions.map(session => session.types.map(type => {
+        item.showtimes.map(showtime => showtime.rooms.map(room => room.sessions.map(session => session.types.map(type => {
           addItem(filters, 'name', type.alias);
+          if (!movieFilters.includes(type.alias)) {
+            movieFilters.push(type.alias);
+          }
           return type.alias;
-        }).join(',')).join(',')).join(',')).join(',');
+        }))));
+
+        item.event.filters = movieFilters;
 
         return item.event;
       });
