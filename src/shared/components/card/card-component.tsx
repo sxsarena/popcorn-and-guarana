@@ -9,6 +9,10 @@ interface OwnProps {
 }
 
 const Card: React.FC<OwnProps> = ({ movie }: OwnProps) => {
+  if (!movie) {
+    return null;
+  }
+
   const [trailer, setTrailer] = useState('');
 
   const addDefaultSrc = (evt: React.ChangeEvent<HTMLImageElement>) => {
@@ -30,10 +34,10 @@ const Card: React.FC<OwnProps> = ({ movie }: OwnProps) => {
   }
 
   return (
-    <article className={styles.card}>
+    <article data-testid="card" className={styles.card}>
       <a className={styles['card-link']} href={movie?.siteURL} onClick={handleClick}>
         <figure className={styles['card-imageWrap']}>
-          <img className={styles['card-image']} src={movie?.thumb} alt={movie?.title} onError={addDefaultSrc} />
+          <img data-testid="card-image" className={styles['card-image']} src={movie?.thumb} alt={movie?.title} onError={addDefaultSrc} />
           <ul className={styles['card-tagsList']}>
             {movie?.genres?.map(item => {
               return (
