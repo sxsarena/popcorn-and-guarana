@@ -25,7 +25,8 @@ export interface IMovie {
   images: IThumb[],
   genres: string[],
   trailers: ITrailer[],
-  thumb: string
+  thumb: string,
+  filters: string[]
 }
 
 export interface IFilter {
