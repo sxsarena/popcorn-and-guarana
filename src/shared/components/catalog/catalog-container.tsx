@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
 
 import { IMovie } from '../../store/movies/types';
-import { ICity } from '../../store/cities/types';
+import { ICities } from '../../store/cities/types';
 import { ApplicationState } from '../../store';
 
 import * as MoviesActions from '../../store/movies/actions';
@@ -10,9 +10,10 @@ import * as MoviesActions from '../../store/movies/actions';
 import CatalogComponent from './catalog-component';
 
 interface StateFromProps {
-  cities: ICity,
+  cities: ICities,
   movies: IMovie[],
-  filters: []
+  filters: [],
+  term: string
 }
 
 interface DispatchFromProps {
@@ -20,6 +21,7 @@ interface DispatchFromProps {
 }
 
 const mapStateToProps = ({ movies, cities }: ApplicationState) => ({
+  term: movies.term,
   movies: movies.data.movies,
   filters: movies.data.filters,
   currentCityID: cities.currentID

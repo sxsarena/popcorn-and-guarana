@@ -3,11 +3,24 @@ import classnames from 'classnames';
 
 import styles from './search-bar.module.css';
 
-const SearchBar: React.FC = () => {
+interface IProps {
+  searchMovie(term: string): void
+}
+
+const SearchBar: React.FC<IProps> = ({ searchMovie }: IProps) => {
   const [showMobile, setShowMobile] = useState(false);
+  const [term, setTerm] = useState('');
 
   const handleClick = () => {
     setShowMobile(!showMobile);
+  };
+
+  const handleTerm = (evt: React.ChangeEvent<HTMLInputElement>) => {
+    setTerm(evt.target.value);
+  };
+
+  const handleSearch = (term: string) => {
+    return () => searchMovie(term);
   };
 
   return (
@@ -26,8 +39,8 @@ const SearchBar: React.FC = () => {
           <legend>Formulário de busca</legend>
           {showMobile && <h3 className={styles['searchBar-title']}>O que você procura?</h3>}
           <div className={styles['searchBar-group']}>
-            <input className={styles['searchBar-input']} type="text" placeholder="Pesquise por filmes, cinemas..." />
-            <button className={styles['searchBar-button']} type="submit">
+            <input className={styles['searchBar-input']} type="text" placeholder="Pesquise por filmes, cinemas..." onChange={handleTerm}  />
+            <button className={styles['searchBar-button']} type="button" onClick={handleSearch(term)} >
               <svg className={styles['searchBar-icon']} width="24" height="24">
                 <use xlinkHref="#icon-search"></use>
               </svg>

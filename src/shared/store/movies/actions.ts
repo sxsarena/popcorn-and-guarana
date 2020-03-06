@@ -6,3 +6,5 @@ export const loadRequest = (cityId: string) => action(MoviesTypes.LOAD_REQUEST, 
 export const loadSuccess = (data: { movies: IMovie[], filters: [] }) => action(MoviesTypes.LOAD_SUCCCES, { data });
 
 export const loadFailure = () => action(MoviesTypes.LOAD_FAILURE);
+
+export const searchMovie = (term: string) => action(MoviesTypes.SEARCH_MOVIE, { term });

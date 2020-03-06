@@ -8,6 +8,7 @@ const INITIAL_STATE: MoviesState = {
   },
   error: false,
   loading: false,
+  term: ''
 };
 
 const reducer: Reducer<MoviesState> = (state = INITIAL_STATE, action) => {
@@ -21,6 +22,10 @@ const reducer: Reducer<MoviesState> = (state = INITIAL_STATE, action) => {
     case MoviesTypes.LOAD_FAILURE:
       return {
       ...state, loading: false, error: true, data: {},
+      };
+    case MoviesTypes.SEARCH_MOVIE:
+      return {
+      ...state, term: action.payload.term,
       };
     default:
       return state;

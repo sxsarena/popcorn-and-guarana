@@ -2,7 +2,8 @@
 export enum MoviesTypes {
   LOAD_REQUEST = '@movies/LOAD_REQUEST',
   LOAD_SUCCCES = '@movies/LOAD_SUCCCES',
-  LOAD_FAILURE = '@movies/LOAD_FAILURE'
+  LOAD_FAILURE = '@movies/LOAD_FAILURE',
+  SEARCH_MOVIE = '@movies/SEARCH_MOVIE'
 }
 
 /* Data types */
@@ -39,4 +40,5 @@ export interface MoviesState {
   readonly data: { movies?: IMovie[], filters?: IFilter[] },
   readonly loading: boolean,
   readonly error: boolean
+  readonly term: string
 }

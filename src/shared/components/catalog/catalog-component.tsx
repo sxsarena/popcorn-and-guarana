@@ -12,6 +12,7 @@ interface IProps {
   currentCityID: string,
   movies: IMovie[],
   filters: [],
+  term: string,
   loadRequest(cityId: string): void
 }
 
@@ -37,11 +38,14 @@ class Catalog extends Component<IProps, IState> {
 
   componentDidUpdate(prevProps: IProps) {
     if (prevProps.movies !== this.props.movies) {
-      this.setState({ movies: this.props.movies });
+      this.setState({
+        movies: this.props.movies,
+        filteredMovies: this.props.movies
+      });
     }
 
-    if (prevProps.movies !== this.props.movies) {
-      this.setState({ filteredMovies: this.props.movies });
+    if (prevProps.term !== this.props.term) {
+      this.setState({ filteredMovies: this.props.movies.filter(movie => movie.title?.toLowerCase().includes(this.props.term.toLowerCase()))});
     }
   }
 
@@ -57,7 +61,7 @@ class Catalog extends Component<IProps, IState> {
 
     this.setState({
       selectedFilters: newFilter,
-      filteredMovies: newFilter.length === 0 ? movies : movies?.filter(item => this.checkCommonElement(newFilter, item.filters))
+      filteredMovies: newFilter.length === 0 ? movies : movies?.filter(item => this.checkCommonElement(newFilter, item.filters) && item.title?.toLowerCase().includes(this.props.term.toLowerCase()))
     })
   }
 
