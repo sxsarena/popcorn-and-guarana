@@ -39,7 +39,9 @@ Config
 
 /* Media Queries
 ========================================================================== */
-@media(min-width: var(--screen-tablet-portrait)) {
+@custom-media --tablet-viewport (min-width: var(--screen-tablet-portrait));
+
+@media(--tablet-viewport) {
   .header-nav { padding: 0 10px; }
   .logotype {
     width: 253px;

@@ -104,7 +104,9 @@ Config
 
 /* Media Queries
 ========================================================================== */
-@media(min-width: var(--screen-tablet-portrait)) {
+@custom-media --tablet-viewport (min-width: var(--screen-tablet-portrait));
+
+@media(--tablet-viewport) {
   .searchBar {
     display: block;
     margin-right: 80px;

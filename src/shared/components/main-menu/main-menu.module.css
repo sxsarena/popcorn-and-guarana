@@ -54,7 +54,9 @@ Config
 
 /* Media Queries
 ========================================================================== */
-@media(min-width: var(--screen-tablet-portrait)) {
+@custom-media --tablet-viewport (min-width: var(--screen-tablet-portrait));
+
+@media(--tablet-viewport) {
   .mainMenu-icon { margin-right: 10px; }
   .mainMenu-text {
     color: var(--text-color);
