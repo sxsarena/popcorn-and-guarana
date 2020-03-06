@@ -7,6 +7,12 @@
 ![GitHub repo size](https://img.shields.io/github/repo-size/hemersonvianna/popcorn-and-guarana.svg)
 ![GitHub All Releases](https://img.shields.io/github/downloads/hemersonvianna/popcorn-and-guarana/total.svg)
 
+## Preview
+
+### Responsive
+
+![responsive](https://user-images.githubusercontent.com/1963897/76088091-32309800-5f96-11ea-9a77-f196087da101.gif)
+
 ## Prerequisites
 
 - [Node = v10.15.x](https://nodejs.org/en/)
