@@ -1,3 +1,5 @@
+import './app.module.css';
+
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Route, Switch } from 'react-router-dom';
@@ -9,8 +11,6 @@ import NotFound from './screens/not-found';
 import Layout from './layouts/app';
 
 import routes from './routes';
-
-import './app.module.css';
 
 const App: React.FC<any> = () => {
   return (

@@ -12,27 +12,49 @@ const movies = (req: Request, res: Response) => {
     json: true,
   };
 
+  const addItem = (arr: object[], prop: string, name: string) => {
+    const found = arr.some((item: any) => item[prop] === name);
+    if (!found) arr.push({ [prop]: name });
+  }
+
   interface Data {
     event: {
       images: {
         type: string,
         url: string
       }[],
-      thumb: string
+      thumb: string,
+      filters: string
     },
-    showtimes: object
+    showtimes: {
+      rooms: {
+        sessions: {
+          types: {
+            alias: string
+          }[]
+        }[]
+      }[]
+    }[]
   }
 
   return rp(options)
     .then(body => {
-      const data = body?.map((item: Data) => {
+      const filters: object[] = [];
+
+      const movies = body?.map((item: Data) => {
         const thumb = item.event.images?.filter(image => image.type === 'PosterPortrait' )[0];
 
         item.event.thumb = thumb.url;
 
+        item.event.filters = item.showtimes.map(showtime => showtime.rooms.map(room => room.sessions.map(session => session.types.map(type => {
+          addItem(filters, 'name', type.alias);
+          return type.alias;
+        }).join(',')).join(',')).join(',')).join(',');
+
         return item.event;
       });
-      return res.status(200).json(data);
+
+      return res.status(200).json({ movies, filters });
     })
     .catch(() => {
       // console.log(err);

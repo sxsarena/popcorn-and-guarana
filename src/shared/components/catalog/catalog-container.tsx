@@ -9,7 +9,8 @@ import * as MoviesActions from '../../store/movies/actions';
 import CatalogComponent from './catalog-component';
 
 interface StateFromProps {
-  movies: IMovie[]
+  movies: IMovie[],
+  filters: []
 }
 
 interface DispatchFromProps {
@@ -17,7 +18,8 @@ interface DispatchFromProps {
 }
 
 const mapStateToProps = ({ movies }: ApplicationState) => ({
-  movies: movies.data,
+  movies: movies.data.movies,
+  filters: movies.data.filters
 });
 
 const mapDispatchToProps = (dispatch: Dispatch) => bindActionCreators(MoviesActions, dispatch);

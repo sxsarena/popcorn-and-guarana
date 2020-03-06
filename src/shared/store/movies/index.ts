@@ -2,7 +2,7 @@ import { Reducer } from 'redux';
 import { MoviesState, MoviesTypes } from './types';
 
 const INITIAL_STATE: MoviesState = {
-  data: [],
+  data: {},
   error: false,
   loading: false,
 };

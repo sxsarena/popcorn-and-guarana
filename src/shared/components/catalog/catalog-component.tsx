@@ -8,24 +8,26 @@ import Card from '../card';
 
 import styles from './catalog.module.css';
 
-interface Props {
+interface IProps {
   movies: IMovie[],
+  filters: [],
   loadRequest(cityId: string): void
 }
 
-class Catalog extends Component<Props> {
-  componentDidMount() {
-    const { loadRequest } = this.props;
+class Catalog extends Component<IProps> {
+  constructor(props: IProps) {
+    super(props);
+    const { loadRequest } = props;
 
     loadRequest('1');
   }
 
   render() {
-    const { movies } = this.props;
+    const { movies, filters } = this.props;
 
     return (
       <div>
-        <Filter types={[]} />
+        <Filter filters={filters} />
         <div className={styles.tabs}>
           <ul className={styles['tabs-list']}>
             <li className={styles['tabs-item']}>
@@ -38,7 +40,7 @@ class Catalog extends Component<Props> {
 
           <ul className={styles.moviesList}>
             {movies?.map(movie => (
-              <li className={styles['moviesList-item']} key={movie.id}><Card movie={movie} /></li>
+              <li className={styles['moviesList-item']} key={movie.title}><Card movie={movie} /></li>
             ))}
           </ul>
         </div>

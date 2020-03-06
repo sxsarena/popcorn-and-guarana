@@ -30,7 +30,7 @@ export interface IMovie {
 
 /* State type */
 export interface MoviesState {
-  readonly data: IMovie[]
+  readonly data: { movies: IMovie[], filters: [] }
   readonly loading: boolean
   readonly error: boolean
 }
