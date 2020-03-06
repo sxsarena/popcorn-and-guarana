@@ -1,6 +1,8 @@
 /* ==========================================================================
 Config
 ========================================================================== */
+@import "../../config";
+
 :root {
   --title-color: #fff;
 
@@ -12,6 +14,7 @@ Config
 ========================================================================== */
 .card-link {
   display: block;
+  position: relative;
   text-decoration: none;
 }
 
@@ -25,11 +28,15 @@ Config
   color: var(--title-color);
   font-size: 1.6rem;
   min-height: 3.2rem;
+  padding: 1rem;
+  position: absolute;
+  bottom: 0;
 }
 
 .card-tagsList {
-  background: linear-gradient(to bottom,rgba(33,33,33,0) 0,rgba(33,33,33,0) 1%,rgba(33,33,33,.85) 90%);
+  background: linear-gradient(to bottom,rgba(33,33,33,0) 0,rgba(33,33,33,0) 1%,rgba(33,33,33,0.85) 80%);
   display: inline-block;
+  height: 100%;
   margin: 0;
   padding: 6.5rem 0.5em 0;
   position: absolute;
@@ -38,7 +45,7 @@ Config
   width: 100%;
 }
 
-.card-tagsList-item { margin-bottom: 0.8rem; }
+.card-tagsList-item { display: none; }
 
 .card-tagsList-tag {
   background-color: var(--tag-bg);
@@ -49,4 +56,24 @@ Config
   padding: 0.3rem 0.8rem;
   text-transform: uppercase;
   transform: skew(-10deg);
+}
+
+/* Media Queries
+========================================================================== */
+@custom-media --tablet-viewport (min-width: var(--screen-tablet-portrait));
+
+@media(--tablet-viewport) {
+  .card-title {
+    position: inherit;
+    padding: 0;
+  }
+  .card-tagsList-item {
+    display: inline-block;
+    margin-bottom: 0.8rem;
+  }
+
+  .card-tagsList {
+    background: linear-gradient(to bottom,rgba(33,33,33,0) 0,rgba(33,33,33,0) 1%,rgba(33,33,33,.85) 90%);
+    height: auto;
+  }
 }

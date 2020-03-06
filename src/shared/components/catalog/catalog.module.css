@@ -1,6 +1,8 @@
 /* ==========================================================================
 Config
 ========================================================================== */
+@import "../../config";
+
 :root {
   --tab-color: #09f;
 
@@ -39,11 +41,22 @@ Config
 .moviesList {
   display: flex;
   flex-direction: row;
+  flex-flow: row wrap;
+  justify-content: space-around;
 }
 
 .moviesList-item {
-  margin-left: 1rem;
+  min-width: 13.5rem;
   max-width: 14.6rem;
 }
 
 .moviesList-item:first-child { margin-left: 0; }
+
+/* Media Queries
+========================================================================== */
+@custom-media --tablet-viewport (min-width: var(--screen-tablet-portrait));
+
+@media(--tablet-viewport) {
+  .moviesList { justify-content: flex-start; }
+  .moviesList-item { margin-left: 1rem; }
+}

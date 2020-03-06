@@ -1,6 +1,8 @@
 /* ==========================================================================
 Config
 ========================================================================== */
+@import "../../config";
+
 :root {
   --title-color: #fff;
 
@@ -22,14 +24,18 @@ Config
 }
 
 .filterList-list {
-  margin-bottom: -1rem;
+  display: flex;
+  flex-direction: row;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  margin-bottom: -2rem;
   overflow: hidden;
 }
 
 .filterList-item {
-  display: inline-block;
-  margin-bottom: 1rem;
-  margin-left: 4rem;;
+  margin-bottom: 2rem;
+  min-width: 9rem;
+  padding: 0 1rem;
 }
 
 .filterList-item:first-child { margin-left: 0; }
@@ -85,3 +91,14 @@ Config
 }
 
 .filterList-input { display: none; }
+
+/* Media Queries
+========================================================================== */
+@custom-media --tablet-viewport (min-width: var(--screen-tablet-portrait));
+
+@media(--tablet-viewport) {
+  .filterList-item {
+    margin-left: 4rem;
+    min-width: auto;
+  }
+}
