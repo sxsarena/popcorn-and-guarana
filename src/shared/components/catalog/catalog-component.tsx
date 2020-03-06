@@ -9,6 +9,7 @@ import Card from '../card';
 import styles from './catalog.module.css';
 
 interface IProps {
+  currentCityID: string,
   movies: IMovie[],
   filters: [],
   loadRequest(cityId: string): void
@@ -17,9 +18,9 @@ interface IProps {
 class Catalog extends Component<IProps> {
   constructor(props: IProps) {
     super(props);
-    const { loadRequest } = props;
+    const { loadRequest, currentCityID } = props;
 
-    loadRequest('1');
+    loadRequest(currentCityID);
   }
 
   render() {

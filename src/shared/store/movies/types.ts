@@ -28,9 +28,14 @@ export interface IMovie {
   thumb: string
 }
 
+export interface IFilter {
+  name: string,
+  checked?: boolean
+}
+
 /* State type */
 export interface MoviesState {
-  readonly data: { movies: IMovie[], filters: [] }
-  readonly loading: boolean
+  readonly data: { movies?: IMovie[], filters?: IFilter[] },
+  readonly loading: boolean,
   readonly error: boolean
 }

@@ -1,3 +1,3 @@
-import ChangeCity from './change-city-component';
+import ChangeCity from './change-city-container';
 
 export default ChangeCity;

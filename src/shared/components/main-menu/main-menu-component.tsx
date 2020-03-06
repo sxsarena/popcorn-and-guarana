@@ -9,7 +9,7 @@ interface Props {
   currentCity?: string
 }
 
-const MainMenu: React.FC<Props> = (Props) => {
+const MainMenu: React.FC<Props> = ({ currentCity }: Props) => {
   const [showChooseACity, setShowChooseACity] = useState(false);
 
   const handleShowChooseACity = () => {
@@ -26,9 +26,9 @@ const MainMenu: React.FC<Props> = (Props) => {
             <svg className={styles['mainMenu-icon']} width="24" height="24">
               <use xlinkHref="#icon-city"></use>
             </svg>
-            <span className={styles['mainMenu-text']}>São Paulo</span>
+            <span className={styles['mainMenu-text']}>{currentCity}</span>
           </button>
-          {showChooseACity && <ChangeCity />}
+          {showChooseACity && <ChangeCity onSubmit={handleShowChooseACity} />}
         </li>
         <li className={styles['mainMenu-item']}>
           <button className={styles['mainMenu-link']}>
