@@ -1,11 +1,11 @@
 # Popcorn and Guaraná
 
 [![licence mit](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](http://hemersonvianna.mit-license.org/)
-[![GitHub issues](https://img.shields.io/github/issues/hemersonvianna/popcorn-and-guarana.svg)](https://github.com/hemersonvianna/popcorn-and-guarana/issues)
-![GitHub Release Date](https://img.shields.io/github/release-date/hemersonvianna/popcorn-and-guarana.svg)
-![GitHub top language](https://img.shields.io/github/languages/top/hemersonvianna/popcorn-and-guarana.svg)
-![GitHub repo size](https://img.shields.io/github/repo-size/hemersonvianna/popcorn-and-guarana.svg)
-![GitHub All Releases](https://img.shields.io/github/downloads/hemersonvianna/popcorn-and-guarana/total.svg)
+[![GitHub issues](https://img.shields.io/github/issues/sxsarena/popcorn-and-guarana.svg)](https://github.com/sxsarena/popcorn-and-guarana/issues)
+![GitHub Release Date](https://img.shields.io/github/release-date/sxsarena/popcorn-and-guarana.svg)
+![GitHub top language](https://img.shields.io/github/languages/top/sxsarena/popcorn-and-guarana.svg)
+![GitHub repo size](https://img.shields.io/github/repo-size/sxsarena/popcorn-and-guarana.svg)
+![GitHub All Releases](https://img.shields.io/github/downloads/sxsarena/popcorn-and-guarana/total.svg)
 
 ## Preview
 
@@ -46,7 +46,7 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 ## Log
 
-Check [Releases](https://github.com/hemersonvianna/popcorn-and-guarana/releases) for detailed changelog.
+Check [Releases](https://github.com/sxsarena/popcorn-and-guarana/releases) for detailed changelog.
 
 ## License
 
