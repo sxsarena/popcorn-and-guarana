@@ -140,7 +140,7 @@
     "postcss-nested": "4.2.1",
     "postcss-normalize": "8.0.1",
     "prettier": "1.19.1",
-    "react-dev-utils": "10.2.0",
+    "react-dev-utils": "11.0.4",
     "redux-mock-store": "1.5.4",
     "regenerator-runtime": "0.13.3",
     "release-it": "12.6.3",
